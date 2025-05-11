@@ -1,0 +1,159 @@
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour améliorer la lisibilité */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px); /* Effet de flou pour le contenu */
+    width: 90%;
+    max-width: 1000px;
+  }
+  
+  .welcome-text {
+    flex: 1;
+    padding-right: 2rem;
+  }
+  
+  .welcome-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .welcome-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .login-box {
+    flex: 1;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .login-box h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #f7f4f4;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #fff;
+    outline: none;
+  }
+  
+  .btn-login {
+    width: 100%;
+    padding: 0.75rem;
+    background: #d08e00df;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-login:hover {
+    background: #dfdedb6b;
+  }
+  
+  .signup-link {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #fff;
+  }
+  
+  .signup-link a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  .image-container {
+    display: flex; /* Disposition en flexbox pour aligner les images */
+    justify-content: space-evenly; /* Espacement uniforme mais réduit */
+    align-items: flex-end; /* Aligner les images en bas */
+    margin-top: 1rem; /* Espacement entre le texte et les images */
+    gap: 0.5rem; /* Ajoute un petit espacement entre les images */
+  }
+  
+  .image-container img {
+    border-radius: 10px; /* Coins légèrement arrondis */
+    filter: brightness(1.2) contrast(1.2) grayscale(0.2); /* Filtres pour un effet moderne */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour un effet 3D */
+    width: 25%; /* Taille de base pour img1 et img3 */
+    height: auto; /* Maintient le ratio de l'image */
+  }
+  
+  .image-container img:nth-child(2) {
+    width: 27%; /* img2 est 2% plus grande */
+    height: auto; /* Maintient le ratio de l'image */
+  }
+  .form-group textarea {
+    width: 100%; /* Assure que le textarea occupe toute la largeur disponible */
+    height: 60px; /* Réduit la hauteur des textarea */
+    padding: 0.5rem; /* Ajoute un espacement interne */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure légère */
+    border-radius: 5px; /* Coins arrondis */
+    background: rgba(255, 255, 255, 0.1); /* Fond semi-transparent */
+    color: #fff; /* Couleur du texte */
+    font-size: 0.9rem; /* Taille de police réduite */
+    resize: none; /* Désactive le redimensionnement */
+    transition: border-color 0.3s ease; /* Transition pour un effet au focus */
+  }
+  
+  .form-group textarea:focus {
+    border-color: #fff; /* Change la couleur de la bordure au focus */
+    outline: none; /* Supprime le contour par défaut */
+  }
+  
+  .form-group {
+    margin-bottom: 1rem; /* Ajoute un espacement entre les champs */
+  }

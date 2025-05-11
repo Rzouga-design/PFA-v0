@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Encadrant - Projets Proposés</title>
+    <link rel="stylesheet" href="encadrant.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menu Encadrant</h2>
+        <button class="sidebar-btn" onclick="window.location.href='PropEncadrant.html'">
+            <i class="fas fa-plus"></i> Proposer un projet
+        </button>
+        
+        <button class="sidebar-btn" onclick="window.location.href='mes_projets.html'">
+            <i class="fas fa-list"></i> Mes projets
+        </button>
+        
+        <div style="margin-top: 30px;">
+            <a href="#" class="menu-link">
+                <i class="fas fa-home"></i> Accueil
+            </a>
+            <a href="#" class="menu-link">
+                <i class="fas fa-user"></i> Profil
+            </a>
+            <a href="aide.html" class="menu-link">
+                <i class="fas fa-question-circle"></i> Aide
+            </a>
+            <a href="contact.html" class="menu-link">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Tous les sujets proposés</h1>
+        </div>
+        
+        <div class="projects-container">
+            <!-- Projet disponible -->
+            <div class="project-card">
+                <div class="project-header available" onclick="toggleProject(this)">
+                    <div style="display: flex; align-items: center;">
+                        <h3 class="project-title">Système de gestion de projets académiques</h3>
+                        <span class="project-status status-available">Disponible</span>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="project-content">
+                    <div class="project-description">
+                        Développement d'une plateforme web pour la gestion et le suivi des projets académiques avec fonctionnalités de collaboration et de suivi de progression.
+                    </div>
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Proposé par:</span>
+                            <span class="detail-value">Étudiant Dupont</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Technologies:</span>
+                            <span class="detail-value">HTML, CSS, JavaScript, Node.js</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Niveau requis:</span>
+                            <span class="detail-value">Master 1</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <button class="action-btn view-btn" onclick="window.location.href='projet_details.html?id=1'">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Projet réservé -->
+            <div class="project-card">
+                <div class="project-header reserved" onclick="toggleProject(this)">
+                    <div style="display: flex; align-items: center;">
+                        <h3 class="project-title">Application mobile pour le suivi santé</h3>
+                        <span class="project-status status-reserved">Réservé</span>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="project-content">
+                    <div class="project-description">
+                        Conception d'une application mobile permettant de suivre les indicateurs de santé personnels avec visualisation de données et rappels personnalisés.
+                    </div>
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Proposé par:</span>
+                            <span class="detail-value">Étudiant Martin</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Technologies:</span>
+                            <span class="detail-value">React Native, Firebase</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Niveau requis:</span>
+                            <span class="detail-value">Licence 3</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Réservé par:</span>
+                            <span class="detail-value">Étudiant Lambert</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <button class="action-btn view-btn" onclick="window.location.href='projet_details.html?id=2'">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Projet disponible -->
+            <div class="project-card">
+                <div class="project-header available" onclick="toggleProject(this)">
+                    <div style="display: flex; align-items: center;">
+                        <h3 class="project-title">Analyse des sentiments sur les réseaux sociaux</h3>
+                        <span class="project-status status-available">Disponible</span>
+                    </div>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="project-content">
+                    <div class="project-description">
+                        Implémentation d'un algorithme d'analyse de sentiments pour évaluer l'opinion publique sur différents sujets à partir des données Twitter.
+                    </div>
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Proposé par:</span>
+                            <span class="detail-value">Étudiant Leroy</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Technologies:</span>
+                            <span class="detail-value">Python, NLP, TensorFlow</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Niveau requis:</span>
+                            <span class="detail-value">Master 2</span>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <button class="action-btn view-btn" onclick="window.location.href='projet_details.html?id=3'">
+                                <i class="fas fa-eye"></i> Voir détails
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="encadrant.js">
+       
+    </script>
+</body>
+</html>

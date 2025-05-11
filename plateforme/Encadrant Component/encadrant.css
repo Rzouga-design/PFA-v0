@@ -1,0 +1,290 @@
+
+        :root {
+            --primary-color: #b48614;
+            --secondary-color: #002040;
+            --available-color: #2ecc71;
+            --reserved-color: #e74c3c;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-dark: #1a1a1a;
+            --bg-light: #f5f5f5;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --sidebar-bg: #002040;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background: url('images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: var(--sidebar-bg);
+            color: var(--text-light);
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            position: fixed;
+            backdrop-filter: blur(5px);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        
+        .sidebar-btn {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgb(193, 190, 2);
+        }
+        
+        .sidebar-btn i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 30px;
+            width: calc(100% - 250px);
+        }
+        
+        .header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .header h1 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .projects-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .project-card {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: var(--card-bg);
+        }
+        
+        .project-card:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .project-header {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .project-header:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .project-header.available {
+            border-left: 4px solid var(--available-color);
+        }
+        
+        .project-header.reserved {
+            border-left: 4px solid var(--reserved-color);
+        }
+        
+        .project-title {
+            font-size: 18px;
+            color: var(--text-light);
+            margin: 0;
+            flex-grow: 1;
+            font-weight: 500;
+        }
+        
+        .project-status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+        
+        .status-available {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: var(--available-color);
+        }
+        
+        .status-reserved {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: var(--reserved-color);
+        }
+        
+        .toggle-icon {
+            transition: transform 0.3s;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .project-content {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .project-card.active .project-content {
+            max-height: 500px;
+            padding: 0 20px 20px;
+        }
+        
+        .project-card.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+        
+        .project-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+        
+        .project-details {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+        
+        .detail-row {
+            display: flex;
+            margin-bottom: 8px;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            width: 120px;
+        }
+        
+        .detail-value {
+            color: rgba(255, 255, 255, 0.8);
+            flex-grow: 1;
+        }
+        
+        .action-btn {
+            padding: 8px 15px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .view-btn {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .view-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .action-btn i {
+            margin-right: 5px;
+        }
+        
+        .menu-link {
+            color: var(--text-light);
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            margin-bottom: 5px;
+        }
+        
+        .menu-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .menu-link i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+/* Amélioration de la lisibilité des cadres */
+.projects-container {
+    background-color: rgba(255, 255, 255, 0.15); /* Fond plus clair */
+    color: #ffffff; /* Texte blanc pour un meilleur contraste */
+}
+
+.project-card {
+    background-color: rgba(3, 12, 82, 0.834); /* Fond légèrement plus clair */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Bordure plus visible */
+}
+
+.project-header {
+    background-color: rgba(255, 255, 255, 0.1); /* Fond plus clair au survol */
+    color: #ffffff; /* Texte blanc */
+}
+
+.project-header:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fond plus clair au survol */
+}
+
+.project-description {
+    color: rgba(255, 255, 255, 0.9); /* Texte plus clair pour une meilleure lisibilité */
+}
+
+.project-details .detail-label {
+    color: #ffd700; /* Couleur dorée pour les étiquettes */
+}
+
+.project-details .detail-value {
+    color: #ffffff; /* Texte blanc */
+}

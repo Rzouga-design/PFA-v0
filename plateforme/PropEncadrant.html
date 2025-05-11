@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire Encadrant</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styles spécifiques à cette page */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .form-container {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      width: 90%;
+      max-width: 600px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 0.9rem;
+      transition: border-color 0.3s ease;
+      resize: none;
+    }
+
+    /* Styles améliorés pour la combobox */
+    .custom-combobox {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .custom-combobox-select {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      background: rgba(0, 32, 64, 0.7);
+      color: #fff;
+      font-size: 0.9rem;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b09301'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.5rem center;
+      background-size: 1.5rem;
+      padding-right: 2rem;
+    }
+
+    .custom-combobox-select option {
+      background-color: #002040;
+      color: #fff;
+      padding: 8px;
+    }
+
+    .custom-combobox-select:focus {
+      border-color: #fff;
+      outline: none;
+    }
+
+    .form-group textarea {
+      height: 80px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #fff;
+      outline: none;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .inline-group {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .inline-group > div {
+      flex: 1;
+    }
+
+    .btn-submit {
+      background: #004080;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background: #002040;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Proposer un Projet</h1>
+    <form id="projetForm">
+      <!-- Titre du projet -->
+      <div class="form-group">
+        <label for="titre">Titre du projet :</label>
+        <input type="text" id="titre" name="titre" required>
+      </div>
+
+      <!-- Spécialité -->
+      <div class="form-group">
+        <label>Spécialité :</label>
+        <div class="radio-group">
+          <label><input type="radio" name="specialite" value="GC" required> Génie Civil</label>
+          <label><input type="radio" name="specialite" value="TEL"> Télécommunication</label>
+          <label><input type="radio" name="specialite" value="EM"> Électromécanique</label>
+          <label><input type="radio" name="specialite" value="GI"> Génie Informatique</label>
+        </div>
+      </div>
+
+      <!-- Nombre d'élèves -->
+      <div class="form-group">
+        <label>Nombre d'élèves :</label>
+        <div class="radio-group">
+          <label><input type="radio" name="nombreEleves" value="Monome" required> Monôme</label>
+          <label><input type="radio" name="nombreEleves" value="Binome"> Binôme</label>
+        </div>
+      </div>
+
+      <!-- Encadrant -->
+      <div class="form-group">
+        <label for="encadrant">Encadrant :</label>
+        <input type="text" id="encadrant" name="encadrant" required>
+      </div>
+
+      <!-- Organisme/Adresse -->
+      <div class="form-group">
+        <label for="organisme">Organisme/Adresse :</label>
+        <textarea id="organisme" name="organisme" rows="2" required></textarea>
+      </div>
+
+      <!-- Grade/Fonction et Téléphone/Email -->
+      <div class="form-group inline-group">
+        <div>
+          <label for="grade">Grade/Fonction :</label>
+          <div class="custom-combobox">
+            <select id="grade" name="grade" class="custom-combobox-select" required>
+              <option value="">Sélectionnez votre grade</option>
+              <option value="Lieutenant">Lieutenant</option>
+              <option value="Capitaine">Capitaine</option>
+              <option value="Commandant">Commandant</option>
+              <option value="Lieutenant-Colonel">Lieutenant-Colonel</option>
+              <option value="Colonel">Colonel</option>
+              <option value="Colonel-major">Colonel-major</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="telephone">Téléphone :</label>
+          <input type="text" id="telephone" name="telephone" required>
+        </div>
+        <div>
+          <label for="email">Adresse Email :</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+
+      <!-- Description du projet -->
+      <div class="form-group">
+        <label for="description">Description du projet :</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+      </div>
+
+      <!-- Objectif -->
+      <div class="form-group">
+        <label for="objectif">Objectif :</label>
+        <textarea id="objectif" name="objectif" rows="4" required></textarea>
+      </div>
+
+      <!-- Résultats attendus -->
+      <div class="form-group">
+        <label for="resultats">Résultats attendus :</label>
+        <textarea id="resultats" name="resultats" rows="4" required></textarea>
+      </div>
+
+      <!-- Bouton de soumission -->
+      <div class="form-group">
+        <button type="submit" class="btn-submit">Soumettre</button>
+      </div>
+    </form>
+  </div>
+  <form id="projetForm" method="post" action="php/submit_projet.php"></form>
+</body>
+</html>

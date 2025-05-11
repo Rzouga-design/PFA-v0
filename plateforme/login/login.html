@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="plateforme/styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <!-- Texte d'introduction à gauche -->
+    <div class="welcome-text">
+      <h1>Bienvenue sur la Plateforme de Projets Militaires</h1>
+      <p>
+        Cette plateforme permet aux encadrants de proposer des sujets de projets et aux élèves officiers de découvrir et de postuler à ces projets. Connectez-vous pour accéder à votre espace dédié.
+      </p>
+      <!-- Conteneur pour les trois images -->
+      <div class="image-container">
+        <img src="../images/img1.png" alt="Image 1">
+        <img src="../images/img2.png" alt="Image 2">
+        <img src="../images/img3.png" alt="Image 3">
+      </div>
+    </div>
+
+    <!-- Formulaire de connexion à droite -->
+    <div class="login-box">
+      <h2>Connexion</h2>
+      <form id="loginForm" method="post" action="../includes/authenticate.php">
+        <div class="form-group">
+          <label for="unite">Nom d'unité :</label>
+          <select id="unite" name="unite" required>
+            <option value="">Sélectionnez une unité</option>
+            <option value="academie">Académie militaire</option>
+            <option value="hopital">Hôpital militaire principal d'instruction de Tunis</option>
+            <option value="dgti">D.G.T.I</option>
+            <option value="dgma">D.G.M.A</option>
+            <option value="regiment">Régiment 71 transmission</option>
+            <option value="dgmre">D.G.M.R.E</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="roleField">
+          <label for="role">Rôle :</label>
+          <select id="role" name="role" required disabled>
+            <option value="">Sélectionnez d'abord une unité</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mot de passe :</label>
+          <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe">
+        </div>
+
+        <button type="submit" class="btn-login">Se connecter</button>
+      </form>
+      <div class="password-help">
+        <h5>Mot de passe oublié ?</h5>
+        <h6>Veuillez vérifier votre établissement</h6>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
